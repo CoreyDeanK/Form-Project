@@ -1,268 +1,274 @@
-
-body {
-    margin: 0px;
-    padding: 0px;
+/*General styles*/
+*{
+    box-sizing: border-box; 
+    margin:0;
+    padding:0;
 }
 
-header {
-    margin: 0px;
+body{
+
+    background-color :white;
+    line-height: 2;/*permet de controler l'espace entre les lines */ 
+    max-width: 1000px;
+    margin:0px auto;/*to center the whole content */
+    padding:0px;/*pour mettre un peu d'espace sur tout le contenu*/
+    background-color:rgb(246, 242, 240) ; 
 }
 
-h1 {
-    margin-top: 0;
+html{
+
+    font-size: 18px;/*root font size*/
+     
 }
 
+h1,h2,h5,p{
+    
+    font-family: 'Merriweather', serif;
+    }
+
+    h1,h2 {
+        color: #1C2D47;
+        font-size: 1.0em;
+    }
+
+    h5,p{
+        color: lightgray;
+    }
+
+    p{
+        font-size: .90em;
+    }
+    #hr_1 {
+        border-top: 5px solid #1C2D47;
+        margin-bottom: 0px;
+      }
+    
+    #hr_2 {
+        border-top: 1px solid #1C2D47;
+        margin-top: 3px;
+      }
+
+legend {
+        
+        color: #1C2D47;
+        font-size:1.2rem;/*always refers to the root font-size :1.5*18px is the final result */
+        text-transform: uppercase;
+       
+    }
 
 
-#hr_1 {
-    border-top: 5px solid #1C2D47;
-    margin-bottom: 0px;
-  }
+fieldset label {
+        
+    color:#7a7979;
+    font-size:1.25rem;
+    font-weight: 700;
+}
+/*DRY:do not repeat yourself classes */
 
-#hr_2 {
-    border-top: 1px solid #1C2D47;
-    margin-top: 3px;
-  }
-
-#header_div {
+.border_rad{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     flex-direction: column;
     background-color: #1C2D47;
 }
-
-#code_review_header {
-    /* background-color: #1C2D47; */
+.background_form_header{
     color: white;
     font-family: 'Merriweather', serif;
     text-align: center;
     box-sizing: content-box;
     width: 100%;
-    /* border: solid #1C2D47 10px; */
     padding: 8px;
-
+    font-size: 1.0em;
 }
-
-h3 {
-    font-family: 'Merriweather', serif;
-}
-
-#sign_up {
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 0;
-}
-
-#contact_info {
-    text-align: left;
-    color: #1C2D47;
-}
-
-
-#latest_p {
-    color: lightgray;
-    text-align: center;
-    margin-top: 5px;
-}
-
-#contact_info {
-    text-align: left;
-}
-
-
-label {
-    color: #7a7979;
-
-}
-
-
-#full_name {
-    font-family: 'Merriweather', serif;
-    font-style: italic;
-}
-
-#email {
-    font-family: 'Merriweather', serif;
-    font-style: italic;
-}
-
-input:active {
-    color: #1C2D47;
-}
-
-#field_list {
+/*styling the header*/
+header {
+    
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
+    text-align: center;
+    width: 100%;
+    /* border-bottom: 2px double #00539CFF;  */
+    
+}
+
+h1{
+   
+    color: white;
+    border: 2px solid #00539CFF;
+   
+
+}
+/*all input text that are not submit button will have the box-shadow*/
+input:not([type="submit"]){
+
+    box-shadow: inset 0 2px 0 rgba(0, 0, 0, .15);
+}
+
+/*styling the form*/
+form{
+ 
+    font-size:1.25rem;
+    font-family: 'Merriweather', serif;
+   
+}
+legend {
+    font-weight: 800;
+    margin:15px 0;
+    padding-top:20px;
+}
+
+
+fieldset{
+    border: none;
+}
+
+.item {
+  display:flex;
+  flex-direction: column;
+  padding:10px 0;
+  
+ }
+
+ .row{
+   line-height: 1;  
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  
+ }
+ .row p{
+     font-size:18px
+ }
+
+ fieldset:first-child input:not([id="Zip_Code"]), select{
+    width:100%;
+    height: 50px;
+
+}
+fieldset:first-child {
+    
+    display: flex;
+    flex-direction: column;
+    border-bottom:1px solid #00539CFF; 
+
+}
+
+
+input,select,textarea {
+       
+        border:2px solid #00539CFF;
+        transition:background-color 1s ease-in;
+        transition:border 1s ease-in;
+    }
+/*adding focus to the input fields*/
+input:focus,select:focus,textarea:focus{
+
+    background-color: rgb(55, 111, 175);
+    border: 4px solid rgb(172, 168, 166);
+
+}
+::placeholder {
+    color: rgb(172, 168, 166);
+    text-align: right;
+    margin-right:10px;
   }
 
 
-input {
-    max-width: 100%;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #f1f1f1;
-    text-align:right;
-    font-family: 'Merriweather', serif;
+input[placeholder]{
+    font-size: 20px;
 }
 
-fieldset {
-    border-style: none;
-    color: #7a7979;
+input[id="Zip_Code"] {
+    margin-bottom:50px;
+    width:50%;
+    height: 50px;
+}
+select {
+    font-size: 18px;
+    color:#00539CFF;
+}
+
+select[disabled] {text-align: left;}
+
+/*styling the newsletter form part*/
+
+fieldset:last-child input {
+    margin-right: 15px;
     
 }
 
-#state {
-    max-width: 100%;
-    padding: 16px 43px;
-    border: none;
-    border-radius: 4px;
-    background-color: #f1f1f1;
-    text-align:right;
-    font-family: 'Merriweather', serif;
-}
-
-
-#zipcode {
-    color: #7a7979;
-    display: block;
-    font-family: 'Merriweather', serif;
-    max-width: 40%;
-}
-
-#hr_3 {
-    border-top: 1px solid #1C2D47;
-    margin-top: 3px;
-}
-
-#newsletter_h3 {
-    font-family: 'Merriweather', serif;
-    color: #1C2D47;
-}
-
-p {
-    font-family: 'Merriweather', serif;
-}
-
-
-.container {
-    font-display: inherit;
-}
-
-
-
-#topics_signup {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-
-
-#Sign_up{
     
-    background-color: lightseagreen;
+input[type="checkbox"], input[type="radio"]{
+
+    width: 25px;
+    height: 25px;
+}
+textarea {
+    width: 100%;
+    height: 30vh;
+    border: 2px solid #00539CFF;
+}
+
+textarea::placeholder{
+    font-size: 20px;
+    text-align: left;
+    padding:10px;
+}
+button {
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    background-color: rgb(42, 204, 182);
+    color:whitesmoke;
+    border: 2px solid #00539CFF;
+    font-weight:600;
+    transition:background-color .5s ease-in-out;
+    transition:color .5s ease-in-out;
+
+}
+button:hover {
+
+background-color: rgb(32, 177, 153);
+color:whitesmoke;
+
+}
+footer {
+    
+   text-align: center;
+   font-size:28px;
+}
+.wrapper {
+    margin-bottom: 20px;
+}
+
+/* styling sign up button */
+
+#Sign_Up {
+    background-color: rgb(42, 204, 182);
     color: white;
-    max-width: 100%;
-    margin: 10px;
-    text-align: center;
-    padding: 30px;
     font-family: 'Merriweather', serif;
-    font-style: ;
 }
 
+/*desktop screen*/
 
-#topics{
-    max-width: 100%;
-    margin: 12px;
-    padding: 50px;
-}
+@media screen and (min-width:786px){
 
-
-
-#newsletter_p{
-    color: #1C2D47;
-    margin-left: 12px;
-}
-
-#footer_copyright {
-    color: lightgray;
-    text-align: center;
-    font-style: italic;
-}
-
-/* media query for mobile */
-
-/* @media only screen and (max-width: 320px) { */
-    /* For mobile phones: */
-    /* [class*="col-"] {
-      width: 100%;
-    }
-  } */
-
-
-
-  /* media query for mobile */
-@media only screen 
-and (min-device-width: 375px) 
-and (max-device-width: 812px)
-and (-webkit-min-device-pixel-ratio: 2) {
-
-}
-
-/* media query for desktop */
-
-/* @media only screen 
-and (min-device-width: 768px) 
-and (max-device-width: 1024px)
-and (-webkit-min-device-pixel-ratio: 2) {
-
-
-    #field_list {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-      } */
-
-      @media (min-width: 769px)
-      and (max-width:) {
-
-        .main-header,
-        .main-nav,
-        .row,
-      .col {
-            display: flex;
-        }
-    
-        .main-header {
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .col {
-            flex: 1;
-        flex-direction: column;
-        }
-    
-      .button {
-        margin-top: auto;
-        align-self: flex-start;
-      }
-    
-    }
-    
-    @media (min-width: 1025px) {
-    
-        .main-header {
-            flex-direction: row;
-            justify-content: space-between;
-        }
-    #field_list {
-        display: flex;
-        justify-content: spacebetween;
-    }
+    .item {
+        display:flex;
+        flex-direction:row;
+   
     }
 
+   .item label {
+        flex-basis:300px;
+        flex-grow: 0; /*flex-grow:0 is the default value */
+        flex-shrink: 0; /*flex-shrink:1 is the default value */
 
+    }
+    input[id="Zip_Code"]{
+        width:25%;
+        height: 50px;
+    }
+
+}
