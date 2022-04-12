@@ -250,6 +250,25 @@ footer {
     font-family: 'Merriweather', serif;
 }
 
+
+
+
+/*tablet screen*/
+
+@media screen and (min-width:768px){
+
+
+    input[id="Zip_Code"]{
+        width:25%;
+        height: 50px;
+    }
+
+}
+
+
+
+
+
 /*desktop screen*/
 
 @media screen and (min-width:786px){
